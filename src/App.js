@@ -1,23 +1,15 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Login from './components/Login';
+import Mensaje from './components/Mensaje';
 
 function App() {
+  const [mensaje, setMessage] = useState('');
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Login setMessage={setMessage} />
+      <Mensaje mensaje={mensaje} />
     </div>
   );
 }
